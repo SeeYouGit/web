@@ -1789,9 +1789,9 @@ var GameConfig = /** @class */ (function () {
         Laya.stage.scaleMode = "showall"; // this.scale_mode;
         Laya.stage.screenMode = this.screen_mode;
         Laya.stage.useRetinalCanvas = this.retinal_mode;
-        if (this.base_resource_url) {
-            Laya.URL.basePath = this.base_resource_url;
-        }
+        // if (this.base_resource_url) {
+        // 	Laya.URL.basePath = this.base_resource_url;
+        // }
         console.log("使用资源路径", Laya.URL.basePath);
         this.backend_stage = Laya.stage;
         console.log("Laya引擎启动成功");
