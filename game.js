@@ -21,7 +21,7 @@ function initialize() {
 		var cdn = "https://github.com/SeeYouGit/web/";// 此处配置资源 CDN URL
 		// var cdn = "https://file.gugudang.com/res/down/klgw/" + config.platform;
 		if (cdn) {
-			config.base_resource_url = cdn + '/';
+			config.base_resource_url = cdn;
 		}
 		// if (!cdn.startsWith("http://192.168.")) {
 		// 	config.base_resource_url += config.res_version + '/';
