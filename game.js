@@ -1,12 +1,12 @@
 var config = {
 	project: 'dino',
-	platform: 'wechat',
+	platform: 'web',
 	appid: 'wx6e877afec2fa1ba2',
 	appkey: 'wx6e877afec2fa1ba2',
 	debug: false,
 	inspector: false,
 	backend_engine: 'laya',
-	res_version: '191121d',
+	res_version: '',
 	version: "1.4.8",
 	libs: {},
 };
@@ -23,9 +23,9 @@ function initialize() {
 		if (cdn) {
 			config.base_resource_url = cdn + '/';
 		}
-		if (!cdn.startsWith("http://192.168.")) {
-			config.base_resource_url += config.res_version + '/';
-		}
+		// if (!cdn.startsWith("http://192.168.")) {
+		// 	config.base_resource_url += config.res_version + '/';
+		// }
 		config.stat = false;
 	}
 
@@ -92,22 +92,10 @@ function load_game_dependencies() {
 			load_lib_module("laya", "laya.html");
 			load_lib_module("laya", "laya.ui");
 			load_lib_module("fairygui", "fairygui.laya");
-			load_lib_module("laya", "laya.d3");
-			load_lib_module("laya", "laya.physics3D");
 			if (config.inspector) {
 				load_lib_module("laya", "laya.debugtool");
 			}
-			if (config.platform == 'wechat' || config.platform == 'qq') {
-				// 阿拉丁SDK
-				window.load_script("sdk/ald/ald-game.js");
-			}
 		} break;
-		case 'egret':
-			load_lib_module("egret", "egret");
-			load_lib_module("egret", "game");
-			load_lib_module("egret", "egret.web");
-			load_lib_module("fairygui", "fairygui.egret");
-			break;
 		default:
 			break;
 	}
